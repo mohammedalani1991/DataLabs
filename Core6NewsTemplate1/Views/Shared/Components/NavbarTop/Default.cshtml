@@ -1,0 +1,88 @@
+﻿@model NavViewModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@{
+    var culture = System.Globalization.CultureInfo.CurrentCulture;
+}
+@if(Model.SystemSettings!=null){
+<nav class="navbar navbar-expand-lg navbar-dark py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+    <a asp-controller="Home" asp-action="Index" class="navbar-brand ms-4 ms-lg-0">
+        <h1 class="fw-bold text-white m-0 logo-title">
+            @if (culture.Name == "en")
+            {
+                <img width="50" height="50" src="/Files/@Model.SystemSettings.SmallLogo" /> @Model.SystemSettings.EngName
+            }
+            else
+            {
+              <img width="50" height="50" src="/Files/@Model.SystemSettings.SmallLogo" />  @Model.SystemSettings.AraName
+            }<span class="text-white"></span>
+        </h1>
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto align-items-center p-4 p-lg-0">
+            @if (culture.Name == "en")
+            {
+                foreach (var item in Model.NavMenus.Where(n => n.NavMenuPosision == NavMenuPosision.Top).OrderBy(n => n.indx))
+                {
+                    if (Model.NavMenuItems.Where(s => s.NavMenuId == @item.Id).Count() == 0)
+                    {
+                        <a href="@item.Url" class="nav-item nav-link ">@item.EnName</a>
+                    }
+                    else
+                    {
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">@item.EnName</a>
+                            <div class="dropdown-menu m-0">
+                                @foreach (var subitem in Model.NavMenuItems.Where(n => n.NavMenuId == item.Id))
+                                {
+                                    <a href="@subitem.Url" class="dropdown-item">@subitem.EnName</a>
+                                }
+                            </div>
+                        </div>
+                    }
+                }
+            }
+            else
+            {
+                 foreach (var item in Model.NavMenus.Where(n => n.NavMenuPosision == NavMenuPosision.Top).OrderBy(n => n.indx))
+                {
+                    if (Model.NavMenuItems.Where(s => s.NavMenuId == @item.Id).Count() == 0)
+                    {
+                        <a href="@item.Url" class="nav-item nav-link ">@item.Name</a>
+                    }
+                    else
+                    {
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">@item.Name</a>
+                            <div class="dropdown-menu m-0">
+                                @foreach (var subitem in Model.NavMenuItems.Where(n => n.NavMenuId == item.Id))
+                                {
+                                    <a href="@subitem.Url" class="dropdown-item">@subitem.Name</a>
+                                }
+                            </div>
+                        </div>
+                    }
+                }
+            }
+            @if (User.IsInRole(RoleName.Admins))
+            {
+                <a asp-action="Control" asp-controller="ApplicationUsers" class="nav-item nav-link">@Localizer["Admin"]</a>
+            }
+            <partial name="_Culture" />
+
+
+        </div>
+       @* <div class="d-none d-lg-flex ms-2">
+            <a class="btn btn-outline-primary py-2 px-3" href="">
+                @Localizer["Donate Now"]
+                <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
+                    <i class="fa fa-arrow-right"></i>
+                </div>
+            </a>
+        </div>*@
+    </div>
+</nav>
+}
