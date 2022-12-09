@@ -99,27 +99,27 @@
                     </div>
                     <div class="mb-3">
                         <label asp-for="SmallLogo" class="control-label"></label>
-                        <input class="form-control" type="file" name="SmallLogofile" id="file" accept=".png,.jpg,.jpeg,.gif,.tif,.jfif">
-                        <input asp-for="SmallLogo" class="form-control" id="file" accept=".png,.jpg,.jpeg,.gif,.tif,.jfif">
+                        <input class="form-control file" type="file" name="SmallLogofile" id="file" accept=".png,.jpg,.jpeg,.gif,.tif,.jfif">
+                        <input asp-for="SmallLogo" class="form-control fileinput" id="file" accept=".png,.jpg,.jpeg,.gif,.tif,.jfif">
                         <span asp-validation-for="SmallLogo" class="text-danger"></span>
                     </div>
-                    <div class="mb-3" hidden>
+                    <div class="mb-3">
                         <label asp-for="LargeLogo" class="control-label"></label>
-                        <input class="form-control" type="file" name="LargeLogofile" id="file" accept=".png,.jpg,.jpeg,.gif,.tif,.jfif">
-                        <input asp-for="LargeLogo" class="form-control" id="file" accept=".png,.jpg,.jpeg,.gif,.tif,.jfif">
+                        <input class="form-control file" type="file" name="LargeLogofile" id="file" accept=".png,.jpg,.jpeg,.gif,.tif,.jfif">
+                        <input asp-for="LargeLogo" class="form-control fileinput" id="file" accept=".png,.jpg,.jpeg,.gif,.tif,.jfif">
                         <span asp-validation-for="LargeLogo" class="text-danger"></span>
                     </div>
 
-                    <div class="mb-3" hidden>
+                    <div class="mb-3">
                         <label asp-for="FavIcon" class="control-label"></label>
-                        <input class="form-control" type="file" name="FavIconfile" id="file" accept=".png,.jpg,.jpeg,.gif,.tif,.jfif">
-                        <input asp-for="FavIcon" class="form-control" id="file" accept=".png,.jpg,.jpeg,.gif,.tif,.jfif">
+                        <input class="form-control file" type="file" name="FavIconfile" id="file" accept=".png,.jpg,.jpeg,.gif,.tif,.jfif">
+                        <input asp-for="FavIcon" class="form-control fileinput" id="file" accept=".png,.jpg,.jpeg,.gif,.tif,.jfif">
                         <span asp-validation-for="FavIcon" class="text-danger"></span>
                     </div>
                     <div class="mb-3" hidden>
                         <label asp-for="Footer" class="control-label"></label>
-                        <input class="form-control" type="file" name="Footerfile" id="file" accept=".png,.jpg,.jpeg,.gif,.tif,.jfif">
-                        <input asp-for="Footer" class="form-control" id="file" accept=".png,.jpg,.jpeg,.gif,.tif,.jfif">
+                        <input class="form-control file" type="file" name="Footerfile" id="file" accept=".png,.jpg,.jpeg,.gif,.tif,.jfif">
+                        <input asp-for="Footer" class="form-control fileinput" id="file" accept=".png,.jpg,.jpeg,.gif,.tif,.jfif">
                         <span asp-validation-for="Footer" class="text-danger"></span>
                     </div>
                     <div class="mb-3">
@@ -176,6 +176,15 @@
 </div>
 
 @section Scripts {
+    <script>
+        $(document).ready(function() {
+            $(".file").change(function() {
+                if ($(this).val() != "") {
+                    $(this).siblings(".fileinput").prop("value", $(this).val().split('\\').pop());
+                }
+            });
+        });
+    </script>
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }

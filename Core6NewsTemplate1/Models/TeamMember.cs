@@ -22,12 +22,12 @@
         [Display(Name = "نبذة صغيرة بالانجليزي (بين 100 و 20 حرف)")]
         public string EnBriefDescription { get; set; }
 
-        [StringLength(20, MinimumLength = 3, ErrorMessage = "عدد الحروف يجب ان يكون بين 20 و 3 حرف")]
-        [Display(Name = "الوظيفة (بين 20 و 3 حرف)")]
+        [StringLength(40, MinimumLength = 3, ErrorMessage = "عدد الحروف يجب ان يكون بين 20 و 3 حرف")]
+        [Display(Name = "الوظيفة (بين 40 و 3 حرف)")]
         public string Job { get; set; }
 
-        [StringLength(20, MinimumLength = 3, ErrorMessage = "عدد الحروف يجب ان يكون بين 20 و 3 حرف")]
-        [Display(Name = "الوظيفة بالانجليزي (بين 20 و 3 حرف)")]
+        [StringLength(40, MinimumLength = 3, ErrorMessage = "عدد الحروف يجب ان يكون بين 20 و 3 حرف")]
+        [Display(Name = "الوظيفة بالانجليزي (بين 40 و 3 حرف)")]
         public string EnJob { get; set; }
 
         [StringLength(100)]

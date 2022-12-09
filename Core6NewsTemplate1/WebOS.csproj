@@ -22,6 +22,14 @@
   <ItemGroup>
     <Folder Include="Data\Migrations\" />
     <Folder Include="Migrations\" />
+    <Folder Include="wwwroot\UploadedFile\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\Home\UploadedFiles.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

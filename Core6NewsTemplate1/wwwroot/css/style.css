@@ -11,7 +11,9 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+.dropdown-item:hover{
+    color:#3C8CE7;
+}
 .statictics {
     padding-left: 20px;
     padding-right: 20px;

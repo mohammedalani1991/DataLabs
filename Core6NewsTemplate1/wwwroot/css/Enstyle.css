@@ -1,4 +1,13 @@
 /********** Template CSS **********/
+.dropdown-item:hover {
+    color: #3C8CE7;
+}
+@import url('https://fonts.cdnfonts.com/css/neo-sans-arabic');
+
+.droid-arabic-kufi, .Tajawal, button, input, a, p, strong, h1, h2, h3, h4, h5, h6, .btn, td, th, label, li, dd, dt, div, .form-label, fw-bolder {
+    font-family: 'Neo Sans Arabic', sans-serif;
+}
+
 :root {
     --primary: #154273;
     --secondary: #b7cbed;

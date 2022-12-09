@@ -11,6 +11,7 @@ using Microsoft.Extensions.Logging;
 using WebOS.Data;
 using WebOS.Models;
 using Microsoft.AspNetCore.Localization;
+using WebOS.AuxiliaryClasses;
 
 namespace WebOS.Controllers
 {
@@ -20,12 +21,13 @@ namespace WebOS.Controllers
         private readonly ApplicationDbContext _context;
         private UserManager<ApplicationUser> _usermanager;
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context, UserManager<ApplicationUser> usermanager)
+        private IWebHostEnvironment _environment;
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context, UserManager<ApplicationUser> usermanager, IWebHostEnvironment environment)
         {
             _context = context;
             _usermanager = usermanager;
             _logger = logger;
+            _environment = environment;
         }
 
         [HttpPost]
@@ -103,6 +105,21 @@ namespace WebOS.Controllers
         {
             var Reports = _context.BlogPost.Where(b => b.IsPdf);
             return View(Reports);
+        }
+        public IActionResult UploadedFiles()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UploadFile(IFormFile myfile)
+        {
+            string file ="";
+            file = await UserFile.UploadeNewFileAsync(file,
+myfile, _environment.WebRootPath, Properties.Resources.UploadedFile);
+
+            return RedirectToAction(nameof(UploadedFiles));
         }
         public IActionResult Index()
         {

@@ -117,22 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>عن المنظمة</value>
+  <data name="Categories" xml:space="preserve">
+    <value>الاقسام</value>
   </data>
-  <data name="Know More" xml:space="preserve">
-    <value>اعرف اكثر</value>
+  <data name="close" xml:space="preserve">
+    <value>اغلاق</value>
   </data>
-  <data name="Namir Ali Hussain" xml:space="preserve">
-    <value>نمير علي حسين ، رئيس المنظمة</value>
+  <data name="Home" xml:space="preserve">
+    <value> الرئيسية</value>
   </data>
-  <data name="Namir Ali Hussain, The President" xml:space="preserve">
-    <value>نمير علي حسين ، رئيس المنظمة</value>
+  <data name="Keep In Touch" xml:space="preserve">
+    <value>ابقى على تواصل</value>
   </data>
-  <data name="Our Services" xml:space="preserve">
-    <value>خدمات المنظمة</value>
-  </data>
-  <data name="Services" xml:space="preserve">
-    <value>ماذا نقدم</value>
+  <data name="Latest News" xml:space="preserve">
+    <value>اهم الاخبار</value>
   </data>
 </root>

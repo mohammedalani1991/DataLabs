@@ -121,8 +121,9 @@
             </div>
             <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="position-relative overflow-hidden h-100" style="min-height: 400px;">
-                    <img class="position-absolute w-100 h-100 pt-5 pe-5" src="/img/about-1.jpg" alt="" style="object-fit: cover;">
-                    <img class="position-absolute top-0 end-0 bg-white ps-2 pb-2" src="/img/about-2.jpg" alt="" style="width: 200px; height: 200px;">
+                    <img class="position-absolute w-100 h-100 pt-5 pe-5" src="/Files/@ViewBag.SystemSetting.LargeLogo" alt="" style="object-fit: cover;">
+                    @*                    <img class="position-absolute top-0 end-0 bg-white ps-2 pb-2" src="/img/about-2.jpg" alt="" style="width: 200px; height: 200px;">
+                    *@
                 </div>
             </div>
         </div>
@@ -141,22 +142,23 @@
                             <a asp-action="Wall" asp-controller="BlogPosts">@Localizer["Top News (View All)"]</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">@Localizer["Categories"]</a>
-                                @if(culture.Name=="en"){
-                                <div class="dropdown-menu m-0">
-                                    @foreach (var item in ViewBag.Taxonomies)
-                                    {
-                                        <a asp-action="TaxonomyIndex" asp-controller="BlogPosts" asp-route-taxonomyid="@item.Id" class="dropdown-item">@item.EnName</a>
-                                    }
+                                @if (culture.Name == "en")
+                                {
+                                    <div class="dropdown-menu m-0">
+                                        @foreach (var item in ViewBag.Taxonomies)
+                                        {
+                                            <a asp-action="TaxonomyIndex" asp-controller="BlogPosts" asp-route-taxonomyid="@item.Id" class="dropdown-item">@item.EnName</a>
+                                        }
                                     </div>
                                 }
                                 else
                                 {
-                                <div class="dropdown-menu m-0">
-                                    @foreach (var item in ViewBag.Taxonomies)
-                                    {
-                                        <a asp-action="TaxonomyIndex" asp-controller="BlogPosts" asp-route-taxonomyid="@item.Id" class="dropdown-item">@item.Name</a>
-                                    }
-                                </div>
+                                    <div class="dropdown-menu m-0">
+                                        @foreach (var item in ViewBag.Taxonomies)
+                                        {
+                                            <a asp-action="TaxonomyIndex" asp-controller="BlogPosts" asp-route-taxonomyid="@item.Id" class="dropdown-item">@item.Name</a>
+                                        }
+                                    </div>
                                 }
                             </div>
 
@@ -442,9 +444,84 @@
                 <h1 class="display-6 mb-5">@Localizer["Our Team"]</h1>
             </div>
             <div class="row g-4">
-                @foreach (var item in ViewBag.Team)
+                @if (culture.Name == "en")
                 {
-                    if (culture.Name == "en")
+                <section class="team-members slider">
+                    @foreach (var item in ViewBag.Team)
+                    {
+                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="team-item position-relative rounded overflow-hidden">
+                                <div class="overflow-hidden">
+                                    <img class="img-fluid" src="/Pictures/@item.Image" alt="">
+                                </div>
+                                <div class="team-text bg-light text-center p-4">
+                                    <h5>@item.EnName</h5>
+                                    <p class="text-primary">@item.EnJob</p>
+                                    <div class="team-social text-center">
+                                        <a class="btn btn-square" href="@item.FB"><i class="fab fa-facebook-f"></i></a>
+                                        <a class="btn btn-square" href="@item.Twitter"><i class="fab fa-twitter"></i></a>
+                                        <a class="btn btn-square" href="@item.Instagram"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="team-item position-relative rounded overflow-hidden">
+                                <div class="overflow-hidden">
+                                    <img class="img-fluid" src="/Pictures/@item.Image" alt="">
+                                </div>
+                                <div class="team-text bg-light text-center p-4">
+                                    <h5>@item.EnName</h5>
+                                    <p class="text-primary">@item.EnJob</p>
+                                    <div class="team-social text-center">
+                                        <a class="btn btn-square" href="@item.FB"><i class="fab fa-facebook-f"></i></a>
+                                        <a class="btn btn-square" href="@item.Twitter"><i class="fab fa-twitter"></i></a>
+                                        <a class="btn btn-square" href="@item.Instagram"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="team-item position-relative rounded overflow-hidden">
+                                <div class="overflow-hidden">
+                                    <img class="img-fluid" src="/Pictures/@item.Image" alt="">
+                                </div>
+                                <div class="team-text bg-light text-center p-4">
+                                    <h5>@item.EnName</h5>
+                                    <p class="text-primary">@item.EnJob</p>
+                                    <div class="team-social text-center">
+                                        <a class="btn btn-square" href="@item.FB"><i class="fab fa-facebook-f"></i></a>
+                                        <a class="btn btn-square" href="@item.Twitter"><i class="fab fa-twitter"></i></a>
+                                        <a class="btn btn-square" href="@item.Instagram"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="team-item position-relative rounded overflow-hidden">
+                                <div class="overflow-hidden">
+                                    <img class="img-fluid" src="/Pictures/@item.Image" alt="">
+                                </div>
+                                <div class="team-text bg-light text-center p-4">
+                                    <h5>@item.EnName</h5>
+                                    <p class="text-primary">@item.EnJob</p>
+                                    <div class="team-social text-center">
+                                        <a class="btn btn-square" href="@item.FB"><i class="fab fa-facebook-f"></i></a>
+                                        <a class="btn btn-square" href="@item.Twitter"><i class="fab fa-twitter"></i></a>
+                                        <a class="btn btn-square" href="@item.Instagram"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </section>
+
+
+                }
+                else
+                {
+                <section class="team-members slider">
+                    @foreach (var item in ViewBag.Team)
                     {
                         <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                             <div class="team-item position-relative rounded overflow-hidden">
@@ -463,25 +540,7 @@
                             </div>
                         </div>
                     }
-                    else
-                    {
-                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="team-item position-relative rounded overflow-hidden">
-                                <div class="overflow-hidden">
-                                    <img class="img-fluid" src="/Pictures/@item.Image" alt="">
-                                </div>
-                                <div class="team-text bg-light text-center p-4">
-                                    <h5>@item.Name</h5>
-                                    <p class="text-primary">@item.Job</p>
-                                    <div class="team-social text-center">
-                                        <a class="btn btn-square" href="@item.FB"><i class="fab fa-facebook-f"></i></a>
-                                        <a class="btn btn-square" href="@item.Twitter"><i class="fab fa-twitter"></i></a>
-                                        <a class="btn btn-square" href="@item.Instagram"><i class="fab fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    }
+                </section>
                 }
             </div>
         </div>
@@ -533,8 +592,8 @@
     <div class="container">
         <h2>
             <div class="ticker d-flex flex-wrap justify-content-center align-items-center">
-@*                <strong>@Localizer["Our:"]</strong>
-*@                <ul>
+                @*                <strong>@Localizer["Our:"]</strong>
+                *@                <ul>
                     <li class="fw-bolder">@Localizer["Partners"]</li>
                     <li class="fw-bolder">@Localizer["Donners"]</li>
                 </ul>
@@ -585,12 +644,58 @@
                 }]
             });
         </script>
+        <script>
+            $('.team-members').slick({
+                slidesToShow: 3,
+                rtl: false,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 1500,
+                arrows: false,
+                dots: false,
+                pauseOnHover: false,
+                responsive: [{
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 4
+                    }
+                }, {
+                    breakpoint: 520,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                }]
+            });
+        </script>
     }
     else
     {
         <script>
             $('.customer-logos').slick({
                 slidesToShow: 6,
+                rtl: true,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 1500,
+                arrows: false,
+                dots: false,
+                pauseOnHover: false,
+                responsive: [{
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 4
+                    }
+                }, {
+                    breakpoint: 520,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                }]
+            });
+        </script>
+        <script>
+            $('.team-members').slick({
+                slidesToShow: 3,
                 rtl: true,
                 slidesToScroll: 1,
                 autoplay: true,

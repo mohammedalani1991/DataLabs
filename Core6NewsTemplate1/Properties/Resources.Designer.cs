@@ -83,6 +83,14 @@ namespace WebOS.Properties {
             }
         }
 
+        public static string UploadedFile
+        {
+            get
+            {
+                return "UploadedFile";
+            }
+        }
+
         public static string Courses
         {
             get
