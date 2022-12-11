@@ -10,6 +10,18 @@
     var culture = System.Globalization.CultureInfo.CurrentCulture;
 }
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+<script src="/js/jquery.counterup.min.js"></script>
+
+<script>
+    jQuery(document).ready(function($) {
+        $('.counter').counterUp({
+            delay: 20,
+            time: 2000
+        });
+    });
+</script>
 
 <!-- Carousel Start -->
 <div class="container-fluid p-0 mb-5">
@@ -310,19 +322,19 @@
         </div>
         <div class="row m-0">
             <div class="col-md-3">
-                <h1 class="text-center  text-white">@ViewBag.SystemSetting.VolunteersNumber</h1>
+                <h1 class="text-center counter text-white">@ViewBag.SystemSetting.VolunteersNumber</h1>
                 <h6 class="text-center  text-white">@Localizer["Volunteers"]</h6>
             </div>
             <div class="col-md-3">
-                <h1 class="text-center  text-white">@ViewBag.SystemSetting.EmployeesNumber</h1>
+                <h1 class="text-center counter text-white">@ViewBag.SystemSetting.EmployeesNumber</h1>
                 <h6 class="text-center  text-white">@Localizer["Employees"]</h6>
             </div>
             <div class="col-md-3">
-                <h1 class="text-center  text-white">@ViewBag.SystemSetting.BeneficiariesNumber</h1>
+                <h1 class="text-center counter text-white">@ViewBag.SystemSetting.BeneficiariesNumber</h1>
                 <h6 class="text-center  text-white">@Localizer["Beneficiaries"]</h6>
             </div>
             <div class="col-md-3">
-                <h1 class="text-center  text-white">@ViewBag.SystemSetting.ProjectsNumber</h1>
+                <h1 class="text-center counter text-white">@ViewBag.SystemSetting.ProjectsNumber</h1>
                 <h6 class="text-center  text-white">@Localizer["Projects"]</h6>
             </div>
 
@@ -561,6 +573,7 @@
 </div>
 <!-- Testimonial End -->
 @section scripts{
+
     <script>
         $(".carousel-item").first().addClass("active");
     </script>
@@ -607,14 +620,14 @@
                 dots: false,
                 pauseOnHover: false,
                 responsive: [{
-                    breakpoint: 768,
+                    breakpoint: 868,
                     settings: {
-                        slidesToShow: 4
+                        slidesToShow: 2
                     }
                 }, {
                     breakpoint: 520,
                     settings: {
-                        slidesToShow: 3
+                        slidesToShow: 1
                     }
                 }]
             });
@@ -656,14 +669,14 @@
                 dots: false,
                 pauseOnHover: false,
                 responsive: [{
-                    breakpoint: 768,
+                    breakpoint: 868,
                     settings: {
-                        slidesToShow: 4
+                        slidesToShow: 2
                     }
                 }, {
                     breakpoint: 520,
                     settings: {
-                        slidesToShow: 3
+                        slidesToShow: 1
                     }
                 }]
             });

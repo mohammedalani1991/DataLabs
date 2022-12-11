@@ -8,7 +8,34 @@
     var culture = System.Globalization.CultureInfo.CurrentCulture;
 }
 
-<partial name="_ViewHeader" />
+<div class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container text-center">
+        <h1 class="display-4 text-white animated slideInDown mb-4">@Localizer["Reports"]</h1>
+        @*        <nav aria-label="breadcrumb animated slideInDown">
+        <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+        <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+        <li class="breadcrumb-item text-primary active" aria-current="page">عن المنظمة</li>
+        </ol>
+        </nav>*@
+    </div>
+</div>
+<style>
+    .Pdfcontainer {
+        position: relative;
+        padding-bottom: 70.25%; /*was 56.28*/
+        padding-top: 35px;
+        overflow: hidden;
+    }
+
+        .Pdfcontainer iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+</style>
 <div style="height:100%;margin-top:0;min-height:55vh;">
 
     <div class="container">
@@ -17,7 +44,6 @@
         </div>
         <div class="row">
             @{
-                var counter = 1;
                 foreach (var item in Model)
                 {
                     <div class="col-md-12 mb-2">
@@ -34,10 +60,10 @@
                                 }
                             </h5>
                         </div>
-                        <div class="pdf-blog" src="@item.File" id="example-@counter">
+                        <div class="Pdfcontainer">
+                            <iframe src="/Files/@item.File"></iframe>
                         </div>
                     </div>
-                    counter++;
                     <hr />
                 }
             }
@@ -45,17 +71,8 @@
     </div>
 
 </div>
-<style>
-    .pdfobject-container { height: 30rem; border: 1rem solid rgba(0,0,0,.1); }
-</style>
 
 @section scripts{
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js"></script>
 
-    <script>
-        $(".pdf-blog").each(function() {
-            PDFObject.embed("/Files/" + $(this).attr("src"), "#" + $(this).attr("id"));
-        });
-    </script>
 
 }

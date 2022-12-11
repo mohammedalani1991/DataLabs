@@ -1,8 +1,24 @@
-﻿<style>
-.pdfobject-container { height: 30rem; border: 1rem solid rgba(0,0,0,.1); }
+﻿<partial name="_ViewHeader" />
+<div class="row justify-content-center">
+    <div id="container">
+        <iframe src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210101201653/PDF.pdf"></iframe>
+
+    </div>
+</div>
+
+<style>
+           #container{
+    position: relative;
+    padding-bottom: 70.25%;/*was 56.28*/
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+    }
+        #container iframe{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    }
 </style>
-<div id="example1"></div>
-@section scripts{
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js"></script>
-<script>PDFObject.embed("/Files/0a6accaf-e17f-4ecd-aaf5-208c7a4df0a2.pdf", "#example1");</script>
-}
