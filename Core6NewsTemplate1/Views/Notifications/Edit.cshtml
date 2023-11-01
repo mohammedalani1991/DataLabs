@@ -38,12 +38,12 @@
                 <select asp-for="SenderId" class="form-control" asp-items="ViewBag.SenderId"></select>
                 <span asp-validation-for="SenderId" class="text-danger"></span>
             </div>
-            <div class="mb-3 form-check">
+            <div class="mb-3">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="IsRead" /> @Html.DisplayNameFor(model => model.IsRead)
                 </label>
             </div>
-            <div class="mb-3 form-check">
+            <div class="mb-3">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="IsDeleted" /> @Html.DisplayNameFor(model => model.IsDeleted)
                 </label>

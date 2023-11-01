@@ -2,12 +2,48 @@
 @{
     ViewData["title"] = "إدارة الموقع";
 }
+<div class="slider-section-03">
 
-<partial name="_ViewHeader" />
-<div class="px-5">
-
-
+</div>
+<div class="px-5 py-2">
 <div class="row">
+    <div class="col-md-2 card my-1 me-1">
+            <a asp-controller="CoursePackages" asp-action="Index"  class="nav-item nav-link">
+            <div class="" style="width: 12rem;height:12rem;padding:20px">
+                <div class="card-body text-center">
+                        <i class="fa fa-bookmark  fa-5x" aria-hidden="true"></i>
+
+                        <h6 style="padding:20px" class="card-title text-dark">الباقات</h6>
+                    @*<p class="card-text">يمكنك البحث و التعديل على جميف المستخدمين داخل التطبيق</p>*@
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2 card my-1 me-1">
+        <a asp-controller="Courses" asp-action="Index"  class="nav-item nav-link">
+            <div class="" style="width: 12rem;height:12rem;padding:20px">
+                <div class="card-body text-center">
+                        <i class="fa fa-book  fa-5x" aria-hidden="true"></i>
+
+                        <h6 style="padding:20px" class="card-title text-dark">الدورات</h6>
+                    @*<p class="card-text">يمكنك البحث و التعديل على جميف المستخدمين داخل التطبيق</p>*@
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2 card my-1 me-1">
+        <a asp-controller="Testimonials" asp-action="Index"  class="nav-item nav-link">
+            <div class="" style="width: 12rem;height:12rem;padding:20px">
+                <div class="card-body text-center">
+                        <i class="fa fa-book  fa-5x" aria-hidden="true"></i>
+
+                        <h6 style="padding:20px" class="card-title text-dark">الشهادات</h6>
+                    @*<p class="card-text">يمكنك البحث و التعديل على جميف المستخدمين داخل التطبيق</p>*@
+                </div>
+            </div>
+        </a>
+    </div>
+    
     <div class="col-md-2 card my-1 me-1">
         <a asp-controller="SystemSettings" asp-action="Edit" asp-route-id="@ViewData["systemSettingId"]" class="nav-item nav-link">
             <div class="" style="width: 12rem;height:12rem;padding:20px">

@@ -115,7 +115,7 @@ namespace WebOS.Controllers
         [HttpPost]
         public async Task<IActionResult> UploadFile(IFormFile myfile)
         {
-            string file ="";
+            string file = "";
             file = await UserFile.UploadeNewFileAsync(file,
 myfile, _environment.WebRootPath, Properties.Resources.UploadedFile);
 
@@ -123,45 +123,18 @@ myfile, _environment.WebRootPath, Properties.Resources.UploadedFile);
         }
         public IActionResult Index()
         {
-            ViewBag.Services = _context.Service.Where(s => s.IsActive);
-            ViewBag.Causes = _context.Cause.Include(b=>b.CauseCategory).OrderByDescending(o=>o.PostDateTime);
-            ViewBag.CausesCategories = _context.CauseCategory;
-            ViewBag.Team = _context.TeamMember;
-            ViewBag.Testomonials = _context.Testimonial;
-            ViewBag.Sliders = _context.Slider;
-            ViewBag.SystemSetting = _context.SystemSettings.FirstOrDefault();
-            ViewBag.Blogs = _context.BlogPost.Include(b=>b.BlogTaxonomy).Where(b=>b.IsFeatured).OrderByDescending(b=>b.PostDateTime).Take(6);
-            ViewBag.Taxonomies = _context.BlogTaxonomy;
-            //IEnumerable<BlogTaxonomy> Taxonomies = _context.BlogTaxonomy;
-            //BlogViewModel blogVM = new BlogViewModel()
-            //{
-            //    SystemSettings = _context.SystemSettings.FirstOrDefault(),
-            //    BlogTaxonomies = Taxonomies,
-            //    NavMenuItems = _context.NavMenuItems.OrderByDescending(h => h.indx),
-            //    NavMenuItemSubs = _context.NavMenuItemSub.OrderByDescending(h => h.indx),
-            //    NavMenus = _context.NavMenus.OrderByDescending(h => h.indx),
-            //    FeaturedBlogPosts = _context.BlogPost.Include(b => b.BlogTaxonomy).Where(b => b.IsFeatured).OrderByDescending(a => a.PostDateTime).Take(4),
-            //    FeaturedBlogPostsOthers = _context.BlogPost.Include(b => b.BlogTaxonomy).Where(b => b.IsFeatured).OrderByDescending(a => a.PostDateTime).Skip(4).Take(4),
-            //    SliderBlogPosts = _context.BlogPost.Where(b => b.BlogTaxonomyId == 1).OrderByDescending(a => a.PostDateTime).Take(5),
-            //    FirstCategoryPosts = _context.BlogPost.Include(b=>b.BlogTaxonomy).Where(b => b.BlogTaxonomyId == 1).OrderByDescending(b => b.PostDateTime).Take(8),
-            //    SeconedCategoryPosts = _context.BlogPost.Include(b=>b.BlogTaxonomy).Where(b => b.BlogTaxonomyId == 8).OrderByDescending(a => a.PostDateTime).Take(4),
-            //    ThirdCategoryPosts = _context.BlogPost.Include(b=>b.BlogTaxonomy).Where(b => b.BlogTaxonomyId == 13).OrderByDescending(a => a.PostDateTime).Take(4),
-            //    FourthCategoryPosts = _context.BlogPost.Include(b=>b.BlogTaxonomy).Where(b => b.BlogTaxonomyId == 15).OrderByDescending(a => a.PostDateTime).Take(5),
-            //    FifthCategoryPosts = _context.BlogPost.Include(b => b.BlogTaxonomy).Where(b => b.BlogTaxonomyId == 9).OrderByDescending(a => a.PostDateTime).Take(4),
+            HomeViewModel HomeVM = new HomeViewModel()
+            {
+                Courses = _context.Course.Where(s => s.IsAdminApproved && !s.Ishidden && !s.IsDeleted),
+                CoursePackages = _context.CoursePackage.Where(s => s.IsAdminApproved && !s.Ishidden && !s.IsDeleted),
+                Testimonials = _context.Testimonial.Where(s => s.IsActive),
+                BlogPosts = _context.BlogPost.Where(s => !s.IsDeleted).OrderByDescending(b=>b.PostDateTime).Take(4),
+                MostReadPosts = _context.BlogPost.Where(s => !s.IsDeleted).OrderByDescending(b=>b.Reads).Take(4),
+                SystemSettings = _context.SystemSettings.FirstOrDefault(),
+            };
 
-            //    SixthCategoryPosts = _context.BlogPost.Include(b => b.BlogTaxonomy).Where(b => b.BlogTaxonomyId == 4).OrderByDescending(a => a.PostDateTime).Take(4),
-            //    SeventhCategoryPosts = _context.BlogPost.Include(b => b.BlogTaxonomy).Where(b => b.BlogTaxonomyId == 21).OrderByDescending(a => a.PostDateTime).Take(4),
-            //    //SeventhCategoryPosts = _context.BlogPost.Where(b => b.BlogTaxonomyId == Taxonomies.ElementAt(1).Id).OrderByDescending(a => a.PostDateTime).Take(4),
-            //    EighthCategoryPosts = _context.BlogPost.Include(b=>b.BlogTaxonomy).Where(b => b.BlogTaxonomyId == 22).OrderByDescending(a => a.PostDateTime).Take(2),
-            //    NinthCategoryPosts = _context.BlogPost.Include(b => b.BlogTaxonomy).Where(b => b.BlogTaxonomyId == 11).OrderByDescending(a => a.PostDateTime).Take(4),
-            //    LastPosts = _context.BlogPost.OrderByDescending(b => b.PostDateTime).Take(6),
-            //    MostReadPosts = _context.BlogPost.Where(c => c.PostDateTime.AddDays(30) >= DateTime.Now).OrderBy(b => b.Reads).Take(10),
-            //    Blocks = _context.Block,
-            //    BlockItems = _context.BlockItem,
-            //    Sliders = _context.Slider.Where(s => s.Status),
-            //};
-            //return View(blogVM);
-            return View();
+
+            return View(HomeVM);
         }
 
 

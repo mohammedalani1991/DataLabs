@@ -21,7 +21,7 @@
                 <select asp-items="@Html.GetEnumSelectList<BlockLocation>()" asp-for="BlockLocation" class="form-control"></select>
                 <span asp-validation-for="BlockLocation" class="text-danger"></span>
             </div>
-            <div class="mb-3 form-check">
+            <div class="mb-3">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="status" /> @Html.DisplayNameFor(model => model.status)
                 </label>

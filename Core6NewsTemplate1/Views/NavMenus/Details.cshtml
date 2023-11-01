@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "العناصر داخل قائمة" + ViewData["navmenuname"];
 }
-<partial name="_ViewHeader" />
+<div class="slider-section-03"></div>
 <div class="px-5">
     <div class="row">
         <div class="col-lg-12">
@@ -75,7 +75,7 @@
                                                     <input required asp-for="NavMenuItemSub.indx" class="form-control" />
                                                     <span asp-validation-for="NavMenuItemSub.indx" class="text-danger"></span>
                                                 </div>
-                                                <div class="mb-3 form-check">
+                                                <div class="mb-3">
                                                     <label class="form-check-label">
                                                         <input class="form-check-input" asp-for="NavMenuItemSub.IsActive" /> @Html.DisplayNameFor(model => model.NavMenuItemSub.IsActive)
                                                     </label>

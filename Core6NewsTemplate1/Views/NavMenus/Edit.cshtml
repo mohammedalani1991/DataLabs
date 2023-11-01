@@ -3,8 +3,9 @@
 @{
     ViewData["Title"] = "Edit";
 }
-<partial name="_ViewHeader" />
-<div class="px-5">
+
+<div class="slider-section-03"></div>
+<div class="px-5 py-5">
     <h4>التعديل على العنصر "@Model.Name" </h4>
     <hr />
     <div class="row">
@@ -42,10 +43,12 @@
                     <input asp-for="indx" class="form-control" />
                     <span asp-validation-for="indx" class="text-danger"></span>
                 </div>
-                <div class="mb-3 form-check">
-                    <label class="form-check-label">
-                        <input class="form-check-input" asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
-                    </label>
+                <div class="mb-3">
+                    <div class="checkbox">
+                        <label>
+                            <input id="isprerecorded" asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
+                        </label>
+                    </div>
                 </div>
                 <div class="mb-3">
                     <input type="submit" value="حفظ" class="btn btn-success rounded-0" />

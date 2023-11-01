@@ -5,8 +5,10 @@
 }
 @using X.PagedList.Mvc.Core;
 @using X.PagedList;
-<partial name="_ViewHeader" />
-<div class="px-5">
+<div class="slider-section-03">
+            
+        </div>
+<div class="px-5 py-5">
     <h4>إدارة القائمة</h4>
     <div class="row">
         <div class="col-lg-12">
@@ -55,7 +57,7 @@
                                     <input required asp-for="NavMenu.indx" class="form-control" />
                                     <span asp-validation-for="NavMenu.indx" class="text-danger"></span>
                                 </div>
-                                <div class="mb-3 form-check">
+                                <div class="mb-3">
                                     <label class="form-check-label">
                                         <input class="form-check-input" asp-for="NavMenu.IsActive" /> @Html.DisplayNameFor(model => model.NavMenu.IsActive)
                                     </label>
@@ -148,7 +150,7 @@
                                                     <input required asp-for="NavMenuItem.indx" class="form-control" />
                                                     <span asp-validation-for="NavMenuItem.indx" class="text-danger"></span>
                                                 </div>
-                                                <div class="mb-3 form-check">
+                                                <div class="mb-3">
                                                     <label class="form-check-label">
                                                         <input class="form-check-input" asp-for="NavMenuItem.IsActive" /> @Html.DisplayNameFor(model => model.NavMenuItem.IsActive)
                                                     </label>

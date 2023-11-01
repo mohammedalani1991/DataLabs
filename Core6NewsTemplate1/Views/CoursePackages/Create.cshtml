@@ -1,0 +1,212 @@
+﻿@model WebOS.Models.CoursePackage
+
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="slider-section-03">
+</div>
+<div class="px-5 py-2">
+
+    <h1>Create</h1>
+
+    <h4>CoursePackage</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-8">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="mb-3">
+                    <label asp-for="ArName" class="control-label"></label>
+                    <input asp-for="ArName" class="form-control" />
+                    <span asp-validation-for="ArName" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="EnName" class="control-label"></label>
+                    <input asp-for="EnName" class="form-control" />
+                    <span asp-validation-for="EnName" class="text-danger"></span>
+                </div>
+                @* <div class="mb-3">
+                <label asp-for="ApplicationUserId" class="control-label"></label>
+                <select asp-for="ApplicationUserId" class="form-control" asp-items="ViewBag.ApplicationUserId"></select>
+                </div> *@
+                <div class="mb-3">
+                    <label asp-for="StartingDate" class="control-label"></label>
+                    <input asp-for="StartingDate" class="form-control" />
+                    <span asp-validation-for="StartingDate" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="EndingDate" class="control-label"></label>
+                    <input asp-for="EndingDate" class="form-control" />
+                    <span asp-validation-for="EndingDate" class="text-danger"></span>
+                </div>
+                @* <div class="mb-3">
+                <label asp-for="DateOfRecord" class="control-label"></label>
+                <input asp-for="DateOfRecord" class="form-control" />
+                <span asp-validation-for="DateOfRecord" class="text-danger"></span>
+                </div> *@
+                <div class="mb-3">
+                    <label asp-for="TotalMinutes" class="control-label"></label>
+                    <input asp-for="TotalMinutes" class="form-control" />
+                    <span asp-validation-for="TotalMinutes" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Image" class="control-label"></label>
+                    <input asp-for="Image" class="form-control" />
+                    <span asp-validation-for="Image" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="IntroductoryVideo" class="control-label"></label>
+                    <input asp-for="IntroductoryVideo" class="form-control" />
+                    <span asp-validation-for="IntroductoryVideo" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Flyer" class="control-label"></label>
+                    <input asp-for="Flyer" class="form-control" />
+                    <span asp-validation-for="Flyer" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="FilePdf" class="control-label"></label>
+                    <input asp-for="FilePdf" class="form-control" />
+                    <span asp-validation-for="FilePdf" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Effort" class="control-label"></label>
+                    <input asp-for="Effort" class="form-control" />
+                    <span asp-validation-for="Effort" class="text-danger"></span>
+                </div>
+                @*  <div class="mb-3 ">
+                <div class="checkbox">
+
+                <label>
+                <input asp-for="IsPaid" /> @Html.DisplayNameFor(model => model.IsPaid)
+                </label>
+                </div>
+                </div> *@
+                <div class="mb-3">
+                    <label asp-for="CourseFees" class="control-label"></label>
+                    <input asp-for="CourseFees" class="form-control" />
+                    <span asp-validation-for="CourseFees" class="text-danger"></span>
+                </div>
+                <div class="mb-3 ">
+                    <div class="checkbox">
+
+                        <label>
+                            <input asp-for="IsAdminApproved" /> @Html.DisplayNameFor(model => model.IsAdminApproved)
+                        </label>
+
+                    </div>
+                </div>
+                <div class="mb-3 ">
+                    <div class="checkbox">
+
+                        <label>
+                            <input asp-for="IsFeatured" /> @Html.DisplayNameFor(model => model.IsFeatured)
+                        </label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Overview" class="control-label"></label>
+                    <input asp-for="Overview" class="form-control" />
+                    <span asp-validation-for="Overview" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Introduction" class="control-label"></label>
+                    <textarea asp-for="Introduction" rows="5" class="form-control"></textarea>
+                    <span asp-validation-for="Introduction" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="LearningOutcomes" class="control-label"></label>
+                    <textarea asp-for="LearningOutcomes" rows="5" class="form-control"></textarea>
+                    <span asp-validation-for="LearningOutcomes" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Requirements" class="control-label"></label>
+                    <textarea rows="5" asp-for="Requirements" class="form-control"></textarea>
+                    <span asp-validation-for="Requirements" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Tags" class="control-label"></label>
+                    <input asp-for="Tags" class="form-control" />
+                    <span asp-validation-for="Tags" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Speciality" class="control-label"></label>
+                    <input asp-for="Speciality" class="form-control" />
+                    <span asp-validation-for="Speciality" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="TargetStudents" class="control-label"></label>
+                    <textarea rows="5" asp-for="TargetStudents" class="form-control"></textarea>
+                    <span asp-validation-for="TargetStudents" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="ImportantDates" class="control-label"></label>
+                    <textarea rows="5" asp-for="ImportantDates" class="form-control"></textarea>
+                    <span asp-validation-for="ImportantDates" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Language" class="control-label"></label>
+                    <select asp-for="Language" asp-items="Html.GetEnumSelectList<Language>()" class="form-control"></select>
+                    <span asp-validation-for="Language" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <div class="checkbox">
+                        <label>
+                            <input asp-for="Ishidden" /> @Html.DisplayNameFor(model => model.Ishidden)
+                        </label>
+                    </div>
+                </div>
+                <div class="mb-3 ">
+                    <div class="checkbox">
+
+                        <label>
+                            <input asp-for="IsPrerecorded" /> @Html.DisplayNameFor(model => model.IsPrerecorded)
+                        </label>
+                    </div>
+                </div>
+                <div class="mb-3 ">
+                    <div class="checkbox">
+
+                        <label>
+                            <input asp-for="IsDeleted" /> @Html.DisplayNameFor(model => model.IsDeleted)
+                        </label>
+                    </div>
+                </div>
+                <div class="mb-3 ">
+                    <div class="checkbox">
+
+                        <label>
+                            <input asp-for="Ishidden" /> @Html.DisplayNameFor(model => model.Ishidden)
+                        </label>
+                    </div>
+                </div>
+                <div class="mb-3 ">
+                    <div class="checkbox">
+
+                        <label>
+                            <input asp-for="IsReported" /> @Html.DisplayNameFor(model => model.IsReported)
+                        </label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="LiveStreamLink" class="control-label"></label>
+                    <input asp-for="LiveStreamLink" class="form-control" />
+                    <span asp-validation-for="LiveStreamLink" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

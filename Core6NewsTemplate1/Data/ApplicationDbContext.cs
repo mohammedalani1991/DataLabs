@@ -53,5 +53,7 @@ namespace WebOS.Data
         public DbSet<WebOS.Models.BlogPostImage> BlogPostImage { get; set; }
         public DbSet<WebOS.Models.CauseCategory> CauseCategory { get; set; }
         public DbSet<WebOS.Models.CauseImage> CauseImage { get; set; }
+        public DbSet<WebOS.Models.Course> Course { get; set; }
+        public DbSet<WebOS.Models.CoursePackage> CoursePackage { get; set; }
     }
 }

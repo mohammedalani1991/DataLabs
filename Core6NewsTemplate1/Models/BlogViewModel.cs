@@ -26,7 +26,7 @@ namespace WebOS.Models
         public IEnumerable<BlogPost> EighthCategoryPosts { get; set; }
         public IEnumerable<BlogPost> NinthCategoryPosts { get; set; }
         public IEnumerable<NavMenu> NavMenus { get; set; }
-        public IEnumerable<NavMenuItem>  NavMenuItems { get; set; }
+        public IEnumerable<NavMenuItem> NavMenuItems { get; set; }
         public IEnumerable<NavMenuItemSub> NavMenuItemSubs { get; set; }
         public IEnumerable<BlogPost> FeaturedBlogPosts { get; set; }
         public IEnumerable<BlogPost> FeaturedBlogPostsOthers { get; set; }
@@ -37,8 +37,8 @@ namespace WebOS.Models
         public IEnumerable<HomeCard> HomeCards { get; set; }
         public IEnumerable<Block> Blocks { get; set; }
         public IEnumerable<BlockItem> BlockItems { get; set; }
-      
-     
+
+
 
 
         public int BlogPostsCount { get; set; }

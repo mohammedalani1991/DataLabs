@@ -4,7 +4,7 @@
     ViewData["Title"] = "تعديل بانر";
 }
 
-<partial name="_ViewHeader" />
+<div class="slider-section-03"></div>
 <div class="px-5">
 
 
@@ -72,7 +72,7 @@
                     <input asp-for="EnUrlText" class="form-control" />
                     <span asp-validation-for="EnUrlText" class="text-danger"></span>
                 </div>
-                <div class="mb-3 form-check">
+                <div class="mb-3">
                     <label class="form-check-label">
                         <input class="form-check-input" asp-for="Status" /> @Html.DisplayNameFor(model => model.Status)
                     </label>

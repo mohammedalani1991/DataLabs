@@ -4,7 +4,7 @@
     ViewData["Title"] = "Create";
 }
 
-<partial name="_ViewHeader" />
+<div class="slider-section-03"></div>
 <div class="px-5">
 
     <h4>إضافة قسم رئيسي</h4>
@@ -28,7 +28,7 @@
                     <input value="0" asp-for="Sub" class="form-control" />
                     <span asp-validation-for="Sub" class="text-danger"></span>
                 </div>
-                <div class="mb-3 form-check">
+                <div class="mb-3">
                     <label class="form-check-label">
                         <input class="form-check-input" asp-for="IsFeatured" /> @Html.DisplayNameFor(model => model.IsFeatured)
                     </label>

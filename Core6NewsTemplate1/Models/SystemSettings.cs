@@ -99,13 +99,13 @@
         [Display(Name = "Instagram")]
         public string Instagram { get; set; }
 
-        [Display(Name = "عدد المشاريع")]
+        [Display(Name = "عدد الباقات")]
         public int ProjectsNumber { get; set; }
 
-        [Display(Name = "عدد الموظفين")]
+        [Display(Name = "عدد الطلاب")]
         public int EmployeesNumber { get; set; }
 
-        [Display(Name = "عدد المتطوعين")]
+        [Display(Name = "عدد الدورات")]
         public int VolunteersNumber { get; set; }
 
         [Display(Name = "عدد المستفيدين")]

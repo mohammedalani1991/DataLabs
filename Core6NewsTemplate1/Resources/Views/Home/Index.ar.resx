@@ -208,4 +208,17 @@
   <data name="See All" xml:space="preserve">
     <value>مشاهدة الكل</value>
   </data>
+  <data name="Learn Something" xml:space="preserve">
+    <value>تعلم شيئاً</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>جديد</value>
+  </data>
+  <data name="Today" xml:space="preserve">
+    <value>اليوم</value>
+  </data>
+  <data name="  Finding Your Right Courses" xml:space="preserve">
+    <value>ابحث عن افضل الدورات لك</value>
+  </data>
+
 </root>

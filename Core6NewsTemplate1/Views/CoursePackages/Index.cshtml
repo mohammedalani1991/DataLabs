@@ -1,0 +1,213 @@
+﻿@model IEnumerable<WebOS.Models.CoursePackage>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="slider-section-03">
+</div>
+<div class="px-5 py-2">
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ArName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicationUser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfRecord)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalMinutes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IntroductoryVideo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flyer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FilePdf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Effort)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsPaid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseFees)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsAdminApproved)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsFeatured)
+            </th>
+           @*  <th>
+                @Html.DisplayNameFor(model => model.Overview)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Introduction)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LearningOutcomes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Requirements)
+            </th> *@
+            <th>
+                @Html.DisplayNameFor(model => model.Tags)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Speciality)
+            </th>
+           @*  <th>
+                @Html.DisplayNameFor(model => model.TargetStudents)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImportantDates)
+            </th> *@
+            <th>
+                @Html.DisplayNameFor(model => model.Language)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsPrerecorded)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsDeleted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ishidden)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsReported)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LiveStreamLink)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicationUser.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfRecord)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalMinutes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntroductoryVideo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Flyer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FilePdf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Effort)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsPaid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseFees)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsAdminApproved)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsFeatured)
+            </td>
+            @* <td>
+                @Html.DisplayFor(modelItem => item.Overview)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Introduction)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LearningOutcomes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Requirements)
+            </td> *@
+            <td>
+                @Html.DisplayFor(modelItem => item.Tags)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Speciality)
+            </td>
+           @*  <td>
+                @Html.DisplayFor(modelItem => item.TargetStudents)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImportantDates)
+            </td> *@
+            <td>
+                @Html.DisplayFor(modelItem => item.Language)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsPrerecorded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDeleted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ishidden)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsReported)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LiveStreamLink)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
